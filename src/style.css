@@ -56,7 +56,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
 
   /* background: #fff url(/src/images/watch-face_simple.svg) no-repeat center; */
-  background: url(/src/images/watch-face_no-dot/watch-face_simple.svg) no-repeat center;
+  background: url(./src/images/watch-face_no-dot/watch-face_simple.svg) no-repeat center;
   /* background: url(/src/images/watch-face_no-dot/watch-face_hard.svg) no-repeat center; */
   /* background: url(/src/images/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
   /* background: url(/src/images/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
