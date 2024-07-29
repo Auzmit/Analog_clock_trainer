@@ -19,7 +19,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
 }
 
@@ -61,6 +61,8 @@ body {
   /* background: url(/src/images/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
   /* background: url(/src/images/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
   background-size: 100%;
+
+  transition: 0.5s;
 }
 
 #minutes-container, #hours-container {
@@ -74,6 +76,7 @@ body {
   --arrow-minutes-width: 1%;
   --arrow-hours-height: calc(var(--arrow-minutes-height)/1.3);
   --arrow-hours-width: calc(var(--arrow-minutes-width)*2);
+  --arrows-transition: 0.8s;
 }
 
 #minutes {
@@ -85,6 +88,7 @@ body {
   /* transform-origin: 50% 100%; */
   background: #FF4500;
   transform-origin: 50% 100%;
+  transition: var(--arrows-transition);
 }
 
 #hours {
@@ -96,6 +100,7 @@ body {
   /* transform-origin: 50% 100%; */
   background: #228B22;
   transform-origin: 50% 100%;
+  transition: var(--arrows-transition);
 }
 
 #showing_time {
@@ -120,6 +125,7 @@ body {
   text-align: center;
   /* font-size: calc(var(--digital-time_width)*8); */
   /* font-size: 2rem; */
+  transition: var(--arrows-transition);
 }
 
 #digital-colon {
@@ -132,6 +138,7 @@ body {
   width: 15vw;
   height: 3vw;
   margin-top: 2%;
+  transition: var(--arrows-transition);
 }
 
 #github-link {
