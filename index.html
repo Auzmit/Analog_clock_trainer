@@ -1,9 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Webpack Package</title>
-  </head>
+    <link rel="stylesheet" href="./src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="./src/site.webmanifest">
+    <title>Web Clock</title>
+    </head>
   <body>
-    <div id="point"></div>
+    <div id="clock">
+      <div class="hours-container">
+        <div class="hours"></div>
+      </div>
+      <div class="minutes-container">
+        <div class="minutes"></div>
+      </div>
+      <div class="seconds-container">
+        <div class="seconds"></div>
+      </div>
+    </div>
+    <!-- <div id="watch-face">
+
+    </div> -->
+    <div id="github-link">Made with ❤ by <a href='https://github.com/Auzmit'>@Auzmit</a></div>
+    <script src="init.js"></script>
   </body>
 </html>
