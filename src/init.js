@@ -1,10 +1,10 @@
-import { fontSize } from "./scripts/fontSize.js";
+import { fontSize } from './scripts/fontSize.js';
 
-let btnNextTask = document.querySelector('#btn_next-task');
-let arrowMinutes = document.querySelector('#minutes');
-let arrowHours = document.querySelector('#hours');
-let digitalMinutes = document.querySelector('#digital-minutes');
-let digitalHours = document.querySelector('#digital-hours');
+const btnNextTask = document.querySelector('#btn_next-task');
+const arrowMinutes = document.querySelector('#minutes');
+const arrowHours = document.querySelector('#hours');
+const digitalMinutes = document.querySelector('#digital-minutes');
+const digitalHours = document.querySelector('#digital-hours');
 
 let randomedTime = randomTime();
 // let randomedMinutes = editTimeNumber(randomedTime.minutes);
@@ -30,30 +30,32 @@ btnNextTask.addEventListener('click', () => {
 function rotateArrows() {
   randomedTime = randomTime();
   // console.log(randomedTime);
-  let minutes_angle = randomedTime.minutes_angle;
-  let hours_angle = randomedTime.hours_angle;
-  arrowMinutes.style.transform = 'rotate(' + minutes_angle + 'deg)'; 
-  arrowHours.style.transform = 'rotate(' + hours_angle + 'deg)'; 
+  const { angleMinutes } = randomedTime;
+  const { angleHours } = randomedTime;
+  arrowMinutes.style.transform = `rotate(${angleMinutes}deg)`;
+  arrowHours.style.transform = `rotate(${angleHours}deg)`;
 }
 
 function randomTime() {
-  let hours = randomInteger(0, 11);
-  let minutes = randomInteger(0, 59);
-  let minutes_angle = minutes*6;
-  let hours_angle = hours*30 + minutes*0.5;
+  const hours = randomInteger(0, 11);
+  const minutes = randomInteger(0, 59);
+  const angleMinutes = minutes * 6;
+  const angleHours = hours * 30 + minutes * 0.5;
 
   // if (hours <= 9) hours = '0' + hours;
   // if (minutes <= 9) minutes = '0' + minutes;
   console.log(hours, ':', minutes);
-  return {hours, minutes, minutes_angle, hours_angle};
+  return {
+    hours, minutes, angleMinutes, angleHours,
+  };
 }
 
 function randomInteger(min, max) {
-  let randomNumber = Math.random() * (max - min + 1) + min;
+  const randomNumber = Math.random() * (max - min + 1) + min;
   return Math.floor(randomNumber);
 }
 
 function editTimeNumber(timeNumber) {
-  if (timeNumber <= 9) timeNumber = '0' + timeNumber;
+  if (timeNumber <= 9) timeNumber = `0${timeNumber}`;
   return timeNumber;
 }
