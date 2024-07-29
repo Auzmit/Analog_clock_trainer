@@ -1,3 +1,13 @@
+@media (min-width: 1200px) {
+  body { font-size: 0.9rem; }
+}
+@media (max-width: 1199px) and (min-width: 900px) {
+  body { font-size: 0.8rem; }
+}
+@media (max-width: 899px) {
+  body { font-size: 0.7rem; }
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -35,12 +45,12 @@ body {
 
 #clock {
   position: relative;
-  top: -10%;
+  /* top: -10%; */
   left: -0.1%;
   /* flex-direction: column; */
 
-  width: 40vw;
-  height: 40vw;
+  width: 26vw;
+  height: 26vw;
   /* border-radius: 10px 10px; */
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
@@ -50,7 +60,7 @@ body {
   /* background: url(/src/images/watch-face_no-dot/watch-face_hard.svg) no-repeat center; */
   /* background: url(/src/images/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
   /* background: url(/src/images/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
-  background-size: 65%;
+  background-size: 100%;
 }
 
 #minutes-container, #hours-container {
@@ -60,8 +70,8 @@ body {
   bottom: 0;
   left: 0;
 
-  --arrow-minutes-height: 26.5%;
-  --arrow-minutes-width: 0.4%;
+  --arrow-minutes-height: 40%;
+  --arrow-minutes-width: 1%;
   --arrow-hours-height: calc(var(--arrow-minutes-height)/1.3);
   --arrow-hours-width: calc(var(--arrow-minutes-width)*2);
 }
@@ -74,6 +84,7 @@ body {
   left: calc(50% - var(--arrow-minutes-width)/2);
   /* transform-origin: 50% 100%; */
   background: #FF4500;
+  transform-origin: 50% 100%;
 }
 
 #hours {
@@ -84,12 +95,50 @@ body {
   left: calc(50% - var(--arrow-hours-width)/2);
   /* transform-origin: 50% 100%; */
   background: #228B22;
+  transform-origin: 50% 100%;
 }
 
-/* #github-link {
+#showing_time {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 15vw;
+  height: 3vw;
+  margin-top: 2%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+  border: 1px solid green;
+}
+
+.digital-time {
+  --digital-time_width: 25%;
+  width: var(--digital-time_width);
+  /* border: 1px ridge rgba(211, 220, 50, .6); */
+  /* border: 1px solid red; */
+
+  text-align: center;
+  /* font-size: calc(var(--digital-time_width)*8); */
+  /* font-size: 2rem; */
+}
+
+#digital-colon {
+  width: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#btn_next-task {
+  width: 15vw;
+  height: 3vw;
+  margin-top: 2%;
+}
+
+#github-link {
+  margin-top: 2%;
+  /* display: flex;
   position: relative;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-} */
+  justify-content: center; */
+}

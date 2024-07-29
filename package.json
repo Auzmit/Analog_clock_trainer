@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "",
   "type": "module",
-  "scripts": {
-    "test": "jest --colors"
-  },
   "author": "Auzmit",
   "license": "ISC",
   "homepage": "https://github.com/Auzmit/Analog_clock_trainer#readme",
