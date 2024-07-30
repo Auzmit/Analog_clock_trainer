@@ -1,4 +1,4 @@
-import { changeFontSize } from './scripts/changeFontSize.js';
+import { adaptFontSize } from './scripts/adaptFontSize.js';
 import { randomTime } from './scripts/random.js';
 
 const spanNextTask = document.querySelector('#span_next-task');
@@ -23,13 +23,13 @@ function rotateArrows() {
 }
 
 function onloadActions() {
-  changeFontSize();
+  adaptFontSize();
   randomedTime = randomTime();
   rotateArrows();
 }
 
 window.onload = onloadActions;
-window.onresize = changeFontSize;
+window.onresize = adaptFontSize;
 
 spanNextTask.addEventListener('click', () => {
   if (spanNextTask.innerHTML === 'Show me digital time') {

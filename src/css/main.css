@@ -24,7 +24,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  --clock-size: 40vh;
+  --clock-size: 42vh;
   --buttons-size_height: calc(var(--clock-size) * 0.12);
   --buttons-size_width: calc(var(--buttons-size_height) * 2.8);
 
@@ -37,7 +37,7 @@ body {
   --digital-time_numbers_width: 40%;
   --digital-time_colon_width: calc(100% - var(--digital-time_numbers_width) * 2);
 
-  --span_next-task_height: calc(var(--clock-size) * 0.18);
+  --span_next-task_height: calc(var(--clock-size) * 0.20);
   --span_next-task_width: calc(var(--span_next-task_height) * 4.8);
   --span_next-task_textColor: rgba(0, 0, 0, 1);
 }
