@@ -8,29 +8,33 @@
     <title>Analog clock trainer</title>
   </head>
   <body>
-    <div id="clock">
-      <div id="minutes-container">
-        <div id="minutes"></div>
+    <div id="clock-container">
+      <div id="clock">
+        <div id="minutes-container">
+          <div id="minutes"></div>
+        </div>
+  
+        <div id="hours-container">
+          <div id="hours"></div>
+        </div>
       </div>
-
-      <div id="hours-container">
-        <div id="hours"></div>
+  
+      <div id="showing_time">
+        <div class="digital-time" id="digital-hours">??</div>
+        <div class="digital-time" id="digital-colon">:</div>
+        <div class="digital-time" id="digital-minutes">??</div>
       </div>
     </div>
 
-    <div id="showing_time">
-      <div class="digital-time" id="digital-hours">??</div>
-      <div class="digital-time" id="digital-colon">:</div>
-      <div class="digital-time" id="digital-minutes">??</div>
+    <div id="footer">
+      <span id="span_next-task">Show me digital time</span>
+  
+      <!-- <svg id="svgText" viewBox="0 0 56 18">
+        <text x="0" y="15">Fit Me</text>
+      </svg> -->
+  
+      <div id="github-link">Made with ❤ by <a href='https://github.com/Auzmit'>@Auzmit</a></div>
     </div>
-
-    <button id="btn_next-task">Show me digital time</button>
-
-    <!-- <svg id="svgText" viewBox="0 0 56 18">
-      <text x="0" y="15">Fit Me</text>
-    </svg> -->
-
-    <div id="github-link">Made with ❤ by <a href='https://github.com/Auzmit'>@Auzmit</a></div>
 
     <script src="./src/init.js" type="module"></script>
   </body>

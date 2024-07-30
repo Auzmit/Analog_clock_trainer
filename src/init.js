@@ -1,7 +1,7 @@
 import { adjustFontSize } from './scripts/adjustFontSize.js';
 import { randomTime } from './scripts/random.js';
 
-const btnNextTask = document.querySelector('#btn_next-task');
+const spanNextTask = document.querySelector('#span_next-task');
 const arrowMinutes = document.querySelector('#minutes');
 const arrowHours = document.querySelector('#hours');
 const digitalMinutes = document.querySelector('#digital-minutes');
@@ -44,15 +44,32 @@ window.onresize = adjustFontSize;
 // // exampledigitalTime.style.fontSize = '20px';
 // console.log(exampledigitalTime.style.fontSize);
 
-btnNextTask.addEventListener('click', () => {
-  if (btnNextTask.innerHTML === 'Show me digital time') {
+spanNextTask.addEventListener('click', () => {
+  // spanNextTask.disabled = true;
+  // const animationDuration = 500;
+
+  // spanNextTask.classList.add('textAnimation');
+
+  // setTimeout(() => {
+  //   if (spanNextTask.innerHTML === 'Show me digital time') {
+  //     spanNextTask.innerHTML = 'Next task';
+  //   } else {
+  //     spanNextTask.innerHTML = 'Show me digital time';
+  //   }
+  // }, animationDuration / 2);
+  // setTimeout(() => {
+  //   // spanNextTask.classList = ' ';
+  //   spanNextTask.disabled = false;
+  // }, animationDuration);
+
+  if (spanNextTask.innerHTML === 'Show me digital time') {
+    spanNextTask.innerHTML = 'Next task';
     digitalMinutes.innerHTML = editTimeNumber(randomedTime.minutes);
     digitalHours.innerHTML = editTimeNumber(randomedTime.hours);
-    btnNextTask.innerHTML = 'Next task';
   } else {
+    spanNextTask.innerHTML = 'Show me digital time';
     rotateArrows();
     digitalMinutes.innerHTML = '??';
     digitalHours.innerHTML = '??';
-    btnNextTask.innerHTML = 'Show me digital time';
   }
 });

@@ -6,12 +6,12 @@ function adjustFontSize() {
   const arrDigitalTime = document.querySelectorAll('.digital-time');
   arrDigitalTime.forEach((digitalTime) => { digitalTime.style.fontSize = changedFontSize; });
 
-  const btnNextTask = document.getElementById('btn_next-task');
-  // const btnNextTaskHeight = btnNextTask.offsetHeight;
-  // changedFontSize = `${btnNextTaskHeight * 0.4}px`;
-  const btnNextTaskWidth = btnNextTask.offsetWidth;
-  changedFontSize = `${btnNextTaskWidth * 0.09}px`;
-  btnNextTask.style.fontSize = changedFontSize;
+  const spanNextTask = document.getElementById('span_next-task');
+  // const spanNextTaskHeight = spanNextTask.offsetHeight;
+  // changedFontSize = `${spanNextTaskHeight * 0.4}px`;
+  const spanNextTaskWidth = spanNextTask.offsetWidth;
+  changedFontSize = `${spanNextTaskWidth * 0.09}px`;
+  spanNextTask.style.fontSize = changedFontSize;
   // console.log('adjustFontSize');
 }
 
