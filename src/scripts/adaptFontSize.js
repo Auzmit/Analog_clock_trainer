@@ -15,14 +15,14 @@ function changeFontSize(node) {
 }
 
 function adaptFontSize() {
-  const arrDigitalTime = document.querySelectorAll('.digital-time');
-  arrDigitalTime.forEach((digitalTime) => { changeFontSize(digitalTime); });
-
   const spanNextTask = document.getElementById('span_next-task');
   changeFontSize(spanNextTask);
 
   const githubLink = document.getElementById('github-link');
   changeFontSize(githubLink);
+
+  const arrDigitalTime = document.querySelectorAll('.digital-time');
+  arrDigitalTime.forEach((digitalTime) => { changeFontSize(digitalTime); });
 }
 
 export { adaptFontSize };
