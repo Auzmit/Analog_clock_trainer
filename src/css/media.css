@@ -1,0 +1,24 @@
+@media (max-width: 1200px) {
+  body { 
+    --clock-size: 40vh;
+  }
+}
+
+
+/* @media (max-width: 1199px) and (min-width: 900px) {
+  body { 
+    --clock-size: 75vw;
+  }
+} */
+
+/* @media (max-width: 899px) {
+  body { 
+    --clock-size: 75vw;
+  }
+} */
+
+/* @media (max-width < max-height) {
+  body { 
+    --clock-size: 65vw;
+  }
+} */

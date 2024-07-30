@@ -1,0 +1,175 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  --clock-size: 40vh;
+  --buttons-size_height: calc(var(--clock-size) * 0.12);
+  --buttons-size_width: calc(var(--buttons-size_height) * 2.8);
+
+  --arrow-minutes-height: 40%;
+  --arrow-minutes-width: 1%;
+  --arrow-hours-height: calc(var(--arrow-minutes-height)/1.3);
+  --arrow-hours-width: calc(var(--arrow-minutes-width)*2);
+  --arrows-transition: 0.8s;
+
+  --digital-time_numbers_width: 40%;
+  --digital-time_colon_width: calc(100% - var(--digital-time_numbers_width) * 2);
+  /* --digital-time_fontSize: calc(var(--digital-time_numbers_width) * 8); */
+
+  --btn_next-task_height: calc(var(--clock-size) * 0.18);
+  --btn_next-task_width: calc(var(--btn_next-task_height) * 4.8);
+  /* --btn_next-task_width: calc(var(--clock-size) * ); */
+}
+
+/* day/night theme */
+/* .night{
+  background: linear-gradient(45deg,  rgb(64, 64, 121) 50%,  rgb(56, 56, 114) 100%);
+  background-color: rgb(64, 64, 121);
+}
+
+.day{
+  background: linear-gradient(45deg,  rgb(218, 218, 218) 50%,  rgb(235, 235, 235) 100%);
+}
+
+.containerDay{
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.containerNight{
+  background-color: rgb(51, 51, 51, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */
+
+#clock {
+  position: relative;
+  /* top: -10%; */
+  left: -0.1%;
+  /* flex-direction: column; */
+
+  /* width: 26vw;
+  height: 26vw; */
+  width: var(--clock-size);
+  height: var(--clock-size);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  /* background: #fff url(../images/watch-face_no-dot/watch-face_simple.svg) no-repeat center; */
+  background: url(../images/watch-face_no-dot/watch-face_simple.svg) no-repeat center;
+  /* background: url(../images/watch-face_no-dot/watch-face_hard.svg) no-repeat center; */
+  /* background: url(../images/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
+  /* background: url(../images/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
+  background-size: 100%;
+
+  transition: 0.5s;
+}
+
+#minutes-container, #hours-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#minutes {
+  position: absolute;
+  width: var(--arrow-minutes-width);
+  height: var(--arrow-minutes-height);
+  top: calc(50% - var(--arrow-minutes-height));
+  left: calc(50% - var(--arrow-minutes-width)/2);
+  background: #FF4500;
+  transform-origin: 50% 100%;
+  transition: var(--arrows-transition);
+}
+
+#hours {
+  position: absolute;
+  width: var(--arrow-hours-width);
+  height: var(--arrow-hours-height);
+  top: calc(50% - var(--arrow-hours-height));
+  left: calc(50% - var(--arrow-hours-width)/2);
+  background: #228B22;
+  transform-origin: 50% 100%;
+  transition: var(--arrows-transition);
+}
+
+#showing_time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: var(--buttons-size_width);
+  height: var(--buttons-size_height);
+  margin-top: 5%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid green;
+}
+
+.digital-time {
+  width: var(--digital-time_width);
+  /* border: 1px ridge rgba(211, 220, 50, .6); */
+  /* border: 1px solid red; */
+
+  text-align: center;
+  /* text-align: left; */
+  /* font-size: var(--digital-time_fontSize); */
+  /* font-size: 80%; */
+  /* font-size: 2rem; */
+  transition: var(--arrows-transition);
+}
+
+#digital-colon {
+  width: var(--digital-time_colon_width);
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
+}
+
+.digital-time:first-child {
+  text-align: right;
+}
+
+.digital-time:last-child {
+  text-align: left;
+}
+
+#btn_next-task {
+  width: var(--btn_next-task_width);
+  height: var(--btn_next-task_height);
+  margin-top: 25%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: var(--arrows-transition);
+  /* border: 1px solid red; */
+}
+
+#github-link {
+  margin-top: 7%;
+  /* position: relative;
+  top: 10%; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+
+/* #svgText {
+  width: 100%;
+  width: calc(var(--clock-size) * 0.8);
+  border: 1px solid red;
+}
+s
+text {
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid red;
+} */

@@ -25,13 +25,24 @@ function rotateArrows() {
 
 function onloadActions() {
   // console.log('onload');
-  randomedTime = randomTime();
   adjustFontSize();
+  randomedTime = randomTime();
   rotateArrows();
 }
 
 window.onload = onloadActions;
 window.onresize = adjustFontSize;
+
+// const exampleblock = document.querySelector('#showing_time');
+// const exampletotalHeight = exampleblock.offsetHeight;
+// const exampledigitalTime = document.querySelector('.digital-time');
+// // const size = `${exampletotalHeight * 0.8}px`;
+// // console.log(size);
+// // exampledigitalTime.style.fontSize = size;
+// // exampledigitalTime.style.fontSize = `${exampletotalHeight * 8}px`;
+// exampledigitalTime.style.fontSize = exampletotalHeight*0.08 + 'px';
+// // exampledigitalTime.style.fontSize = '20px';
+// console.log(exampledigitalTime.style.fontSize);
 
 btnNextTask.addEventListener('click', () => {
   if (btnNextTask.innerHTML === 'Show me digital time') {
