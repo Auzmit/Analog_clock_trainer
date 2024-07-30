@@ -36,64 +36,35 @@ body {
 
   --digital-time_numbers_width: 40%;
   --digital-time_colon_width: calc(100% - var(--digital-time_numbers_width) * 2);
-  /* --digital-time_fontSize: calc(var(--digital-time_numbers_width) * 8); */
 
   --span_next-task_height: calc(var(--clock-size) * 0.18);
   --span_next-task_width: calc(var(--span_next-task_height) * 4.8);
   --span_next-task_textColor: rgba(0, 0, 0, 1);
-  /* --span_next-task_width: calc(var(--clock-size) * ); */
 }
-
-/* day/night theme */
-/* .night{
-  background: linear-gradient(45deg,  rgb(64, 64, 121) 50%,  rgb(56, 56, 114) 100%);
-  background-color: rgb(64, 64, 121);
-}
-
-.day{
-  background: linear-gradient(45deg,  rgb(218, 218, 218) 50%,  rgb(235, 235, 235) 100%);
-}
-
-.containerDay{
-  background-color: #fff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.containerNight{
-  background-color: rgb(51, 51, 51, 0.5);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-} */
 
 #clock-container {
-  /* width: 80%; */
   position: absolute;
   top: 10%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
 #clock {
   position: relative;
-  /* top: -10%; */
   /* left: -0.1%; */
   /* flex-direction: column; */
 
-  /* width: 26vw;
-  height: 26vw; */
   width: var(--clock-size);
   height: var(--clock-size);
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-  /* background: #fff url(../images/watch-face_no-dot/watch-face_simple.svg) no-repeat center; */
   background: url(../images/watch-face_no-dot/watch-face_simple.svg) no-repeat center;
   /* background: url(../images/watch-face_no-dot/watch-face_hard.svg) no-repeat center; */
   /* background: url(../images/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
   /* background: url(../images/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
   background-size: 100%;
-
   transition: 0.5s;
 }
 
@@ -107,11 +78,11 @@ body {
 
 #minutes {
   position: absolute;
-  /* position: relative; */
-  width: var(--arrow-minutes-width);
-  height: var(--arrow-minutes-height);
   top: calc(50% - var(--arrow-minutes-height));
   left: calc(50% - var(--arrow-minutes-width)/2);
+
+  width: var(--arrow-minutes-width);
+  height: var(--arrow-minutes-height);
   background: #FF4500;
   transform-origin: 50% 100%;
   transition: var(--arrows-transition);
@@ -133,8 +104,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* position: absolute; */
-  /* left: 50%; */
 
   width: var(--buttons-size_width);
   height: var(--buttons-size_height);
@@ -145,21 +114,14 @@ body {
 
 .digital-time {
   width: var(--digital-time_width);
-  /* border: 1px ridge rgba(211, 220, 50, .6); */
   /* border: 1px solid red; */
 
   text-align: center;
-  /* text-align: left; */
-  /* font-size: var(--digital-time_fontSize); */
-  /* font-size: 80%; */
-  /* font-size: 2rem; */
   transition: var(--arrows-transition);
 }
 
 #digital-colon {
   width: var(--digital-time_colon_width);
-  /* margin-left: 5%; */
-  /* margin-right: 5%; */
 }
 
 .digital-time:first-child {
@@ -189,35 +151,10 @@ body {
   margin-top: 10%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-  /* color: var(--span_next-task_textColor); */
   color: rgba(0, 0, 0, 1);
-  /* animation: changeTextOpacity .5s; */
-  /* transition: var(--arrows-transition); */
-  /* border: 1px solid red; */
 }
-
-/* #span_next-task.textAnimation {
-  animation: changeTextOpacity .5s;
-} */
 
 #github-link {
   margin-top: 25%;
   margin-bottom: 10%;
-  /* position: relative;
-  top: 10%; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
 }
-
-/* #svgText {
-  width: 100%;
-  width: calc(var(--clock-size) * 0.8);
-  border: 1px solid red;
-}
-s
-text {
-  font-family: 'Courier New', Courier, monospace;
-  border: 1px solid red;
-} */

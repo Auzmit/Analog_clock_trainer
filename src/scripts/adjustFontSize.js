@@ -7,12 +7,9 @@ function adjustFontSize() {
   arrDigitalTime.forEach((digitalTime) => { digitalTime.style.fontSize = changedFontSize; });
 
   const spanNextTask = document.getElementById('span_next-task');
-  // const spanNextTaskHeight = spanNextTask.offsetHeight;
-  // changedFontSize = `${spanNextTaskHeight * 0.4}px`;
   const spanNextTaskWidth = spanNextTask.offsetWidth;
   changedFontSize = `${spanNextTaskWidth * 0.09}px`;
   spanNextTask.style.fontSize = changedFontSize;
-  // console.log('adjustFontSize');
 }
 
 // function () {
