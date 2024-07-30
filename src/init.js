@@ -1,4 +1,4 @@
-import { adjustFontSize } from './scripts/adjustFontSize.js';
+import { changeFontSize } from './scripts/changeFontSize.js';
 import { randomTime } from './scripts/random.js';
 
 const spanNextTask = document.querySelector('#span_next-task');
@@ -16,7 +16,6 @@ function editTimeNumber(timeNumber) {
 
 function rotateArrows() {
   randomedTime = randomTime();
-  // console.log(randomedTime);
   const { angleMinutes } = randomedTime;
   const { angleHours } = randomedTime;
   arrowMinutes.style.transform = `rotate(${angleMinutes}deg)`;
@@ -24,44 +23,15 @@ function rotateArrows() {
 }
 
 function onloadActions() {
-  // console.log('onload');
-  adjustFontSize();
+  changeFontSize();
   randomedTime = randomTime();
   rotateArrows();
 }
 
 window.onload = onloadActions;
-window.onresize = adjustFontSize;
-
-// const exampleblock = document.querySelector('#showing_time');
-// const exampletotalHeight = exampleblock.offsetHeight;
-// const exampledigitalTime = document.querySelector('.digital-time');
-// // const size = `${exampletotalHeight * 0.8}px`;
-// // console.log(size);
-// // exampledigitalTime.style.fontSize = size;
-// // exampledigitalTime.style.fontSize = `${exampletotalHeight * 8}px`;
-// exampledigitalTime.style.fontSize = exampletotalHeight*0.08 + 'px';
-// // exampledigitalTime.style.fontSize = '20px';
-// console.log(exampledigitalTime.style.fontSize);
+window.onresize = changeFontSize;
 
 spanNextTask.addEventListener('click', () => {
-  // spanNextTask.disabled = true;
-  // const animationDuration = 500;
-
-  // spanNextTask.classList.add('textAnimation');
-
-  // setTimeout(() => {
-  //   if (spanNextTask.innerHTML === 'Show me digital time') {
-  //     spanNextTask.innerHTML = 'Next task';
-  //   } else {
-  //     spanNextTask.innerHTML = 'Show me digital time';
-  //   }
-  // }, animationDuration / 2);
-  // setTimeout(() => {
-  //   // spanNextTask.classList = ' ';
-  //   spanNextTask.disabled = false;
-  // }, animationDuration);
-
   if (spanNextTask.innerHTML === 'Show me digital time') {
     spanNextTask.innerHTML = 'Next task';
     digitalMinutes.innerHTML = editTimeNumber(randomedTime.minutes);

@@ -4,7 +4,7 @@ function randomInteger(min, max) {
 }
 
 function randomTime() {
-  const hours = randomInteger(0, 11);
+  const hours = randomInteger(1, 12);
   const minutes = randomInteger(0, 59);
   const angleMinutes = minutes * 6;
   const angleHours = hours * 30 + minutes * 0.5;
@@ -15,4 +15,3 @@ function randomTime() {
 }
 
 export { randomTime };
-// export { randomInteger, randomTime };

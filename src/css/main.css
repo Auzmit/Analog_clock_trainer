@@ -150,8 +150,10 @@ body {
   height: var(--span_next-task_height);
   margin-top: 10%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
   color: rgba(0, 0, 0, 1);
+  background-color: #fff;
+
+  user-select: none;
 }
 
 #github-link {
