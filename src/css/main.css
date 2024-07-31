@@ -1,4 +1,4 @@
-@keyframes changeTextOpacity{
+/* @keyframes changeTextOpacity{
   0% {
     color: rgba(0, 0, 0, 1);
   }
@@ -8,7 +8,7 @@
   100% {
     color: rgba(0, 0, 0, 1);
   }
-}
+} */
 
 html, body {
   width: 100%;
@@ -23,25 +23,32 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  
   --clock-size: 42vh;
+  --clock-transition: .6s;
   --buttons-size_height: calc(var(--clock-size) * 0.12);
   --buttons-size_width: calc(var(--buttons-size_height) * 2.8);
-
+  
   --arrow-minutes-height: 40%;
   --arrow-minutes-width: 1%;
   --arrow-hours-height: calc(var(--arrow-minutes-height)/1.3);
   --arrow-hours-width: calc(var(--arrow-minutes-width)*2);
   --arrows-transition: 0.8s;
-
+  
   --digital-time_numbers_width: 40%;
   --digital-time_colon_width: calc(100% - var(--digital-time_numbers_width) * 2);
+  
+  --btn_clock-changer_height: calc(var(--buttons-size_width) / 1.7);
+  --btn_clock-changer_width: var(--btn_clock-changer_height);
+  /* --btn_clock-changer_transition: .3s; */
+  --btn_clock-changer_transition: var(--clock-transition);
 
   --span_next-task_height: calc(var(--clock-size) * 0.20);
   --span_next-task_width: calc(var(--span_next-task_height) * 4.8);
   --span_next-task_textColor: rgba(0, 0, 0, 1);
 }
 
+/* CLOCK-CONTAINER */
 #clock-container {
   position: absolute;
   top: 10%;
@@ -58,14 +65,14 @@ body {
   width: var(--clock-size);
   height: var(--clock-size);
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 15px; */
 
-  background: url(../images/watch-face_no-dot/watch-face_simple.svg) no-repeat center;
-  /* background: url(../images/watch-face_no-dot/watch-face_hard.svg) no-repeat center; */
-  /* background: url(../images/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
-  /* background: url(../images/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
+  background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_simple.svg) no-repeat center;
+  /* background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_hard.svg) no-repeat center; */
+  /* background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
+  /* background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
   background-size: 100%;
-  transition: 0.5s;
+  transition: var(--clock-transition);
 }
 
 #minutes-container, #hours-container {
@@ -83,22 +90,30 @@ body {
 
   width: var(--arrow-minutes-width);
   height: var(--arrow-minutes-height);
-  background: #FF4500;
+  background-color: #FF4500;
+  border-radius: 50% / 3%;
+  border-top-left-radius: 50% 35%;
+  border-top-right-radius: 50% 35%;
   transform-origin: 50% 100%;
   transition: var(--arrows-transition);
 }
 
 #hours {
   position: absolute;
-  width: var(--arrow-hours-width);
-  height: var(--arrow-hours-height);
   top: calc(50% - var(--arrow-hours-height));
   left: calc(50% - var(--arrow-hours-width)/2);
-  background: #228B22;
+  
+  width: var(--arrow-hours-width);
+  height: var(--arrow-hours-height);
+  border-radius: 50% / 3%;
+  border-top-left-radius: 50% 60%;
+  border-top-right-radius: 50% 60%;
+  background-color: #228B22;
   transform-origin: 50% 100%;
   transition: var(--arrows-transition);
 }
 
+/* SHOWING-TIME */
 #showing_time {
   display: flex;
   flex-direction: row;
@@ -108,13 +123,12 @@ body {
   width: var(--buttons-size_width);
   height: var(--buttons-size_height);
   margin-top: 5%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border: 1px solid green;
+  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px; */
+  border: 2px solid green;
 }
 
 .digital-time {
   width: var(--digital-time_width);
-  /* border: 1px solid red; */
 
   text-align: center;
   transition: var(--arrows-transition);
@@ -132,6 +146,56 @@ body {
   text-align: left;
 }
 
+/* CLOCK-CHANGE */
+#clock-change {
+  display: flex;
+  flex-direction: row;
+
+  width: var(--span_next-task_width);
+  margin-top: 5%;
+}
+
+.btn_clock-changer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: var(--btn_clock-changer_width);
+  height: var(--btn_clock-changer_height);
+  margin: auto;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 8px 3px;
+  transition: var(--btn_clock-changer_transition);
+
+  user-select: none;
+}
+
+.btn_clock-changer:first-child {
+  margin-left: 0;
+  background-color: #228B22;
+}
+
+.btn_clock-changer:nth-child(2) {
+  background-color: #d4eb28;
+}
+
+.btn_clock-changer:nth-child(3) {
+  background-color: #f39119;
+}
+
+.btn_clock-changer:last-child {
+  background-color: #e51313;
+  margin-right: 0;
+}
+
+.clock-changer_text {
+  color: black;
+  font-weight: 800;
+}
+
+/* FOOTER */
 #footer {
   display: flex;
   
@@ -149,14 +213,15 @@ body {
   width: var(--span_next-task_width);
   height: var(--span_next-task_height);
   margin-top: 10%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: rgba(0, 0, 0, 1);
   background-color: #fff;
+  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 13px 3px;
 
   user-select: none;
 }
 
 #github-link {
-  margin-top: 25%;
+  margin-top: 15%;
   margin-bottom: 10%;
 }

@@ -1,4 +1,5 @@
 import { adaptFontSize } from './scripts/adaptFontSize.js';
+import { clockChange } from './scripts/clockChanger.js';
 import { randomTime } from './scripts/random.js';
 
 const spanNextTask = document.querySelector('#span_next-task');
@@ -26,6 +27,7 @@ function onloadActions() {
   adaptFontSize();
   // randomedTime = randomTime();
   rotateArrows();
+  clockChange();
 }
 
 window.onload = onloadActions;

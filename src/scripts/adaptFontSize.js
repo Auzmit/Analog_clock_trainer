@@ -23,6 +23,12 @@ function adaptFontSize() {
 
   const arrDigitalTime = document.querySelectorAll('.digital-time');
   arrDigitalTime.forEach((digitalTime) => { changeFontSize(digitalTime); });
+
+  // const btnClockChangerText = document.getElementById('clock-changer_text');
+  const btnClockChangerText = document.querySelector('.btn_clock-changer');
+  // console.log(btnClockChangerText);
+  // console.log(spanNextTask);
+  btnClockChangerText.style.fontSize = spanNextTask.style.fontSize / 2;
 }
 
 export { adaptFontSize };
