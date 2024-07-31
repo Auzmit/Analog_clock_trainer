@@ -24,7 +24,7 @@ function rotateArrows() {
 
 function onloadActions() {
   adaptFontSize();
-  randomedTime = randomTime();
+  // randomedTime = randomTime();
   rotateArrows();
 }
 
