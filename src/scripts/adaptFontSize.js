@@ -7,8 +7,10 @@ function changeFontSize(node) {
     coeffOfChange = 0.11;
   } else if (node.id === 'github-link') {
     coeffOfChange = 0.08;
-  } else {
+  } else if (node.className === 'digital-time') {
     coeffOfChange = 0.8;
+  } else if (node.className === 'btn_clock-changer') {
+    coeffOfChange = 0.2;
   }
   const fontSize = `${parentWholeHeight * coeffOfChange}px`;
   node.style.fontSize = fontSize;
@@ -24,11 +26,8 @@ function adaptFontSize() {
   const arrDigitalTime = document.querySelectorAll('.digital-time');
   arrDigitalTime.forEach((digitalTime) => { changeFontSize(digitalTime); });
 
-  // const btnClockChangerText = document.getElementById('clock-changer_text');
-  const btnClockChangerText = document.querySelector('.btn_clock-changer');
-  // console.log(btnClockChangerText);
-  // console.log(spanNextTask);
-  btnClockChangerText.style.fontSize = spanNextTask.style.fontSize / 2;
+  const arrBtnClockChangerText = document.querySelectorAll('.btn_clock-changer');
+  arrBtnClockChangerText.forEach((btnClockChangerText) => { changeFontSize(btnClockChangerText); });
 }
 
 export { adaptFontSize };

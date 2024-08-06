@@ -14,7 +14,7 @@ function shadowedOnlyOne(btnClockChanger) {
   }
   // eslint-disable-next-line operator-linebreak
   btnClockChanger.style.boxShadow =
-    'rgba(0, 0, 0, 0.6) 0px 5px 8px 3px, inset rgba(0, 0, 0, 0.6) 0px 0px 3px 3px';
+    'rgba(0, 0, 0, 0) 0px 5px 8px 3px, inset rgba(0, 0, 0, 0.6) 0px 0px 3px 3px';
 }
 
 function clockChange() {
@@ -37,7 +37,8 @@ function clockChange() {
         case 'EASY':
           clockBackgroundName = 'simple';
           break;
-        case 'MEDIUM':
+        // case 'MEDIUM':
+        case 'MIDDLE':
           clockBackgroundName = 'hard';
           break;
         case 'HARD':

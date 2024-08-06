@@ -38,7 +38,7 @@ body {
   --digital-time_numbers_width: 40%;
   --digital-time_colon_width: calc(100% - var(--digital-time_numbers_width) * 2);
   
-  --btn_clock-changer_height: calc(var(--buttons-size_width) / 1.7);
+  --btn_clock-changer_height: calc(var(--buttons-size_width) / 1.6);
   --btn_clock-changer_width: var(--btn_clock-changer_height);
   /* --btn_clock-changer_transition: .3s; */
   --btn_clock-changer_transition: var(--clock-transition);
@@ -123,8 +123,10 @@ body {
   width: var(--buttons-size_width);
   height: var(--buttons-size_height);
   margin-top: 5%;
+  
   /* box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px; */
   border: 2px solid green;
+  user-select: none;
 }
 
 .digital-time {
@@ -164,11 +166,11 @@ body {
   height: var(--btn_clock-changer_height);
   margin: auto;
   box-sizing: border-box;
+
   border-radius: 50%;
   border: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 8px 3px;
   transition: var(--btn_clock-changer_transition);
-
   user-select: none;
 }
 
