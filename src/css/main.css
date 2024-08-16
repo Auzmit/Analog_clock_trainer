@@ -67,7 +67,9 @@ body {
   border-radius: 50%;
   /* box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 15px; */
 
-  background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_simple.svg) no-repeat center;
+  background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_clear.png) no-repeat center;
+  /* background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_simple.svg) no-repeat center; */
+
   /* background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_hard.svg) no-repeat center; */
   /* background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_very-hard.svg) no-repeat center; */
   /* background: url(../images/watch-face_svg/watch-face_no-dot/watch-face_very-very-hard.svg) no-repeat center; */
@@ -81,6 +83,12 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+#minutes-container {
+  background: url(../images/watch-face_png/watch-face_no-dot/watch-face_simple.png) no-repeat center;
+  background-size: 100%;
+  transition: var(--clock-transition);
 }
 
 #minutes {

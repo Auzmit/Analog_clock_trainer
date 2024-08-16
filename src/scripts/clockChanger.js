@@ -31,13 +31,13 @@ function clockChange() {
         btnText = event.target.textContent;
       }
 
-      const clock = document.getElementById('clock');
+      // const clock = document.getElementById('clock');
+      const minutesContainer = document.getElementById('minutes-container');
       let clockBackgroundName = '';
       switch (btnText) {
         case 'EASY':
           clockBackgroundName = 'simple';
           break;
-        // case 'MEDIUM':
         case 'MIDDLE':
           clockBackgroundName = 'hard';
           break;
@@ -52,9 +52,15 @@ function clockChange() {
       }
 
       // eslint-disable-next-line operator-linebreak
-      clock.style.background =
-        `url(src/images/watch-face_svg/watch-face_no-dot/watch-face_${clockBackgroundName}.svg)`;
-      clock.style.backgroundSize = '100%';
+      /* eslint-disable */
+      // clock.style.background =
+        // `url(src/images/watch-face_svg/watch-face_no-dot/watch-face_${clockBackgroundName}.svg)`;
+      /* eslint-enable */
+
+      // eslint-disable-next-line operator-linebreak
+      minutesContainer.style.background =
+        `url(src/images/watch-face_png/watch-face_no-dot/watch-face_${clockBackgroundName}.png)`;
+      minutesContainer.style.backgroundSize = '100%';
       // clock.style.transition = '.2s';
       // console.log(clock.style.background);
       // console.log(text);
